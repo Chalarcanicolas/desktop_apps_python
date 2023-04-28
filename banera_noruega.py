@@ -17,44 +17,44 @@ from tkinter import *
 ventana_principal = Tk()
 
 # titulo de la ventana
-ventana_principal.title("bandera de España")
+ventana_principal.title("bandera de Francia")
 
 # tamaño de la ventana
-ventana_principal.geometry("900x500")
+ventana_principal.geometry("900x450")
 
 # deshabilitar boton de maximizar
 ventana_principal.resizable(False, False)
 
 # color de fondo de la ventana
-ventana_principal.config(bg="yellow")
+ventana_principal.config(bg="red")
 
 #--------------------------------
-# frame rojo
+# frame blanco
 #--------------------------------
-frame_rojo = Frame(ventana_principal)
-frame_rojo.config(bg="red", width=900, height=125)
-frame_rojo.place(x=0, y=0)
+frame_blanco = Frame(ventana_principal)
+frame_blanco.config(bg="white", width=140, height=900)
+frame_blanco.place(x=150, y=0)
 
 #--------------------------------
-# frame amarillo
+# frame blanco
 #--------------------------------
-frame_amarillo = Frame(ventana_principal)
-frame_amarillo.config(bg="yellow", width=900, height=250)
-frame_amarillo.place(x=0, y=250)
+frame_blanco = Frame(ventana_principal)
+frame_blanco.config(bg="white", width=900, height=100)
+frame_blanco.place(x=0, y=180)
 
 #--------------------------------
-# frame rojo
+# frame azul
 #--------------------------------
-frame_rojo = Frame(ventana_principal)
-frame_rojo.config(bg="red", width=900, height=125)
-frame_rojo.place(x=0, y=375)
+frame_azul = Frame(ventana_principal)
+frame_azul.config(bg="blue", width=900, height=80)
+frame_azul.place(x=0, y=190)
 
 #--------------------------------
-# frame rojo
-#--------------------------------   
-frame_rojo = Frame(ventana_principal)
-frame_rojo.config(bg="red", width=100, height=100)
-frame_rojo.place(x=120, y=200)
+# frame azul
+#--------------------------------
+frame_azul = Frame(ventana_principal)
+frame_azul.config(bg="blue", width=100, height=450)
+frame_azul.place(x=170, y=0)
 
 # run 
 # se ejectua el motodo mainloop() de la clase Tk() a travez de la instancia ventana_principal. Este metodo despliega la ventana en pantalla y queda a la espera de lo que el usuario haga (click en un boton, escribir, etc). cada accion del usuario de conoce como un evento. el metodo mainloop() e un bucle infinito 
