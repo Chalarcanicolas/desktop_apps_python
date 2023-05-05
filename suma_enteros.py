@@ -9,16 +9,34 @@ from tkinter import messagebox
 # funciones de la app
 #----------------------------
 
-#sumar
-def sumar():
-    pass
+# SUMAR 
+def calcular():
+    messagebox.showinfo("MINICALCULADORA 1.0", "LAS OPERACIONES HAN SIDO REALIZADAS")
+    s = int(x.get()) + int(y.get())
+    r = int(x.get()) - int(y.get())
+    m = int(x.get()) * int(y.get())
+    d = int(x.get()) / int(y.get())
+    de = int(x.get()) // int(y.get())
+    mod = int(x.get()) % int(y.get())
+    p = int(x.get()) ** int(y.get())
+    t_resultados.insert(INSERT, f"{int(x.get())} + {int(y.get())} = {s}")
+    t_resultados.insert(INSERT, f"\n{int(x.get())} - {int(y.get())} = {r}")
+    t_resultados.insert(INSERT, f"\n{int(x.get())} * {int(y.get())} = {m}")
+    t_resultados.insert(INSERT, f"\n{int(x.get())} / {int(y.get())} = {d}")
+    t_resultados.insert(INSERT, f"\n{int(x.get())} // {int(y.get())} = {de}")
+    t_resultados.insert(INSERT, f"\n{int(x.get())} % {int(y.get())} = {mod}")
+    t_resultados.insert(INSERT, f"\n{int(x.get())} ** {int(y.get())} = {p}")
+
 #borrar
 def borrar():
-    pass
+    messagebox.showinfo("minicalculadora 1.0", "Los datos serán borrados")
+    x.set("")
+    y.set("")
+    t_resultados.delete("1.0","end")
 
 #salir
 def salir():
-    messagebox.showinfo("Suma Enteros 1.0", "La app se va a cerrar")
+    messagebox.showinfo("minicalculadora 1.0", "La app se va a cerrar")
     ventana_principal.destroy()
 
 #-----------------------------
@@ -32,7 +50,7 @@ ventana_principal = Tk()
 ventana_principal.geometry("500x500")
 
 # TITULO DE VENTANA
-ventana_principal.title("SUMA ENTEROS 1.0")
+ventana_principal.title("minicalculadora 1.0")
 
 # DESHABILITAR BOTON DE MAXIMIZAR
 ventana_principal.resizable(False, False)
@@ -64,7 +82,7 @@ lb_x.config(bg="white", fg="blue", font=("Helvetica", 18))
 lb_x.place(x=240, y=60)
 
 # caja de texto para valor x
-entry_x = Entry(frame_entrada)
+entry_x = Entry(frame_entrada, textvariable=x)
 entry_x.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
 entry_x.focus_set()
 entry_x.place(x=290,y=60)
@@ -81,7 +99,7 @@ entry_y.focus_set()
 entry_y.place(x=290,y=120)
 
 # TITULO DE APP 
-titulo = Label(frame_entrada, text="suma enteros 1.0")
+titulo = Label(frame_entrada, text="minicalculadora 1.0")
 titulo.config(bg="green", fg="white", font=("Helvetica", 16))
 titulo.place(x=240,y=10)
 
@@ -95,7 +113,7 @@ frame_operaciones.config(bg="white", width=480, height=100)
 frame_operaciones.place(x=10, y=200)
 
 # boton para sumar 
-bl_sumar = Button(frame_operaciones,text="Sumar", command=sumar)
+bl_sumar = Button(frame_operaciones,text="Calcular", command=calcular)
 bl_sumar.place(x=45, y=35, width=100, height=30)
 
 # boton para borrar
